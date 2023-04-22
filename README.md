@@ -1,4 +1,4 @@
-# CS639 Final Project - 'App Name'
+# CS639 Final Project - 'FinanceFlix' (Team 8)
 
 # Project Overview
 
