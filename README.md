@@ -1,4 +1,4 @@
-# CS639 Final Project - 'FinanceFlix' (Team 8)
+# CS639 Final Project - 'FinMinds' (Team 8)
 
 # Project Overview
 
@@ -7,7 +7,7 @@ The app is a **`financial literacy`** app designed for Android devices. It provi
 # Idea and Proposal
 [Idea Proposal & Research](https://docs.google.com/document/d/1yi7Hwpy7o48bMEGhqWHTFnHy8iyZ0ZBt/edit)
 # Design
-<img width="1328" alt="Screenshot 2023-04-22 at 3 59 48 PM" src="https://user-images.githubusercontent.com/64671049/233804100-b5424233-6669-4f5f-8d94-819f7fbbfd87.png">
+<img width="1485" alt="Screenshot 2023-04-22 at 9 09 34 PM" src="https://user-images.githubusercontent.com/64671049/233814011-246d8a86-84ed-40a4-9416-a75052343daa.png">
 
 # Sprint 1
 # Sprint 2
