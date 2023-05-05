@@ -9,4 +9,5 @@
     <string name="title_activity_buildingcs">BuildingcsActivity</string>
     <string name="title_activity_manage_debt">ManageDebtActivity</string>
     <string name="title_activity_inv_ret_plan">InvRetPlanActivity</string>
+    <string name="title_newsactivity">NewsActivity</string>
 </resources>
