@@ -3,4 +3,10 @@
     <string name="random_quiz">Random Quiz</string>
     <string name="news">News</string>
     <string name="topics">Topics</string>
+    <string name="title_activity_topic">TopicActivity</string>
+    <string name="title_activity_tax">TaxActivity</string>
+    <string name="title_activity_budgeting">BudgetingActivity</string>
+    <string name="title_activity_buildingcs">BuildingcsActivity</string>
+    <string name="title_activity_manage_debt">ManageDebtActivity</string>
+    <string name="title_activity_inv_ret_plan">InvRetPlanActivity</string>
 </resources>
