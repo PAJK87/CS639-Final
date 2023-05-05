@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
+
 import com.example.finminds.ui.theme.FinMindsTheme
 
 class NewsActivity : ComponentActivity() {
