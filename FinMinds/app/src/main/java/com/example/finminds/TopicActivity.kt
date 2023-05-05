@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.example.finminds
 
 import android.content.Intent
@@ -10,14 +8,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -26,67 +19,42 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.example.finminds.ui.theme.FinMindsTheme
 
-
-class MainActivity : ComponentActivity() {
+class TopicActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             FinMindsTheme {
-               Surface(
+                Surface(
 
-               ) {
-                   Column(
-                       horizontalAlignment = Alignment.CenterHorizontally
-                   ) {
-                       MyAppBar()
-                       ButtonBox()
-                   }
-               }
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        TopicAppBar()
+                        TopicBox()
+                    }
+                }
             }
         }
     }
 }
-
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyAppBar(){
+fun TopicAppBar(){
     CenterAlignedTopAppBar(
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF4953BB)),
         title = {
             Text(
-                "Home",
+                "Topics",
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = Color.White,
             )
-        },
-
-        navigationIcon = {
-            IconButton(onClick = { /* doSomething() */ }) {
-                Icon(
-                    imageVector = Icons.Filled.Menu,
-                    contentDescription = "Localized description",
-                    tint = Color.White
-                )
-            }
-        },
-        actions = {
-            IconButton(onClick = { /* doSomething() */ }) {
-                Icon(
-                    imageVector = Icons.Filled.Favorite,
-                    contentDescription = "Localized description",
-                    tint = Color.White
-                )
-            }
         }
     )
 
@@ -94,64 +62,104 @@ fun MyAppBar(){
 
 
 @Composable
-fun ButtonBox(){
+fun TopicBox(){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        TopicButton()
-        QuizButton()
-        NewsButton()
+        TaxButton()
+        BudgetingButton()
+        BuildingCSButton()
+        ManagingDebt()
+        InvAndRetPlanning()
     }
 }
 
 
 @Composable
-fun TopicButton(){
+fun TaxButton(){
     val context = LocalContext.current
     Button(
         onClick = {
-            val intent = Intent(context, TopicActivity::class.java)
+            val intent = Intent(context, TaxActivity::class.java)
             context.startActivity(intent)
         },
         modifier = Modifier
-            .height(40.dp)
-            .width(140.dp)
-            .padding(3.dp)
+            .height(70.dp)
+            .width(250.dp)
+            .padding(10.dp)
     ) {
-        Text(text = stringResource(R.string.topics))
+        Text(text = "Tax")
     }
 }
 @Composable
-fun QuizButton(){
+fun BudgetingButton(){
+    val context = LocalContext.current
     Button(
-        onClick = { /*TODO*/ },
+        onClick = {
+            val intent = Intent(context, BudgetingActivity::class.java)
+            context.startActivity(intent)
+                  },
         modifier = Modifier
-            .height(40.dp)
-            .width(140.dp)
-            .padding(3.dp)
+            .height(70.dp)
+            .width(250.dp)
+            .padding(10.dp)
     ) {
-        Text(text = stringResource(R.string.random_quiz))
+        Text(text = "Budgeting")
+    }
+}
+@Composable
+fun BuildingCSButton(){
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            val intent = Intent(context, BuildingcsActivity::class.java)
+            context.startActivity(intent)
+        },
+        modifier = Modifier
+            .height(70.dp)
+            .width(250.dp)
+            .padding(10.dp)
+    ) {
+        Text(text = "Building Credit Score")
+    }
+}
+@Composable
+fun ManagingDebt(){
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            val intent = Intent(context, ManageDebtActivity::class.java)
+            context.startActivity(intent)
+        },
+        modifier = Modifier
+            .height(70.dp)
+            .width(250.dp)
+            .padding(10.dp)
+    ) {
+        Text(text = "Managing Debt")
+    }
+}
+@Composable
+fun InvAndRetPlanning(){
+    val context = LocalContext.current
+    Button(
+        onClick = {
+            val intent = Intent(context, InvRetPlanActivity::class.java)
+            context.startActivity(intent)
+        },
+        modifier = Modifier
+            .height(70.dp)
+            .width(250.dp)
+            .padding(10.dp)
+    ) {
+        Text(text = "Investing and Retirement Planning")
     }
 }
 
-@Composable
-fun NewsButton(){
-    Button(
-        onClick = { /*TODO*/ },
-        modifier = Modifier
-            .height(40.dp)
-            .width(140.dp)
-            .padding(3.dp)
-    ) {
-        Text(
-            text = stringResource(R.string.news)
-        )
-    }
-}
 
 @Preview(showBackground = true)
 @Composable
-fun Preview() {
+fun TopicPreview() {
     FinMindsTheme {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
@@ -159,6 +167,5 @@ fun Preview() {
             MyAppBar()
             ButtonBox()
         }
-
     }
 }
