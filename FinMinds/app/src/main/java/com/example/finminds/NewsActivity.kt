@@ -40,6 +40,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -109,7 +110,9 @@ fun NewsScreenPreview() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewsAppBar(){
+    var shouldShowHomeScreen by rememberSaveable { mutableStateOf(true) }
     val context = LocalContext.current
+
     CenterAlignedTopAppBar(
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF4953BB)),
         title = {
@@ -124,6 +127,7 @@ fun NewsAppBar(){
         navigationIcon = {
             IconButton(
                 onClick = {
+
                     val intent = Intent(context, MainActivity::class.java)
                     context.startActivity(intent)
                 }

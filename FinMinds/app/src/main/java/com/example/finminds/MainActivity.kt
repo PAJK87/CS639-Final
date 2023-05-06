@@ -81,7 +81,6 @@ fun MyAppBar(){
 
 @Composable
 private fun MyApp(modifier: Modifier = Modifier) {
-
     var shouldShowHomeScreen by rememberSaveable { mutableStateOf(true) }
 
     Surface(modifier) {
@@ -131,14 +130,18 @@ fun WelcomeScreen(
             fontSize = 30.sp
         )
         Button(
-            modifier = Modifier.padding(vertical = 24.dp),
+            modifier = Modifier
+                .padding(vertical = 24.dp)
+                .width(250.dp)
+            ,
             onClick = onContinueClicked,
             colors = ButtonDefaults.buttonColors(Color.White)
         ){
             Text(
                 text= "Continue",
                 color = colorResource(id = R.color.Main),
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp,
             )
         }
     }
