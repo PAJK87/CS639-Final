@@ -48,6 +48,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -159,12 +160,16 @@ fun newsList(newsList: Array<NewsData.Articles>) {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun newsItem(article: NewsData.Articles) {
+    val uriHandler = LocalUriHandler.current
     Card(
         modifier = Modifier
             .padding(8.dp, 4.dp)
             .fillMaxWidth()
             .height(110.dp),
         shape = RoundedCornerShape(8.dp),
+        onClick = {
+            uriHandler.openUri(article.url)
+        }
 
     ) {
         Surface() {
