@@ -5,14 +5,13 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 const val BASE_URL = "https://newsapi.org/v2/"
-const val API_KEY = "eb28e9e5a11e47c39191ba2b13309091"
+//const val API_KEY = "eb28e9e5a11e47c39191ba2b13309091"
+const val API_KEY = "fed5b3657d734724a8c3fa420653f725"
 
 interface NewsApiService {
     @GET("everything?domains=wsj.com&apiKey=$API_KEY")
-    suspend fun getWSJNews() : NewsData.News
+    suspend fun getNews() : NewsData.News
 
-    @GET("everything?domains=bloomberg.com&apiKey=$API_KEY")
-    suspend fun getBloombergNews() : NewsData.News
 
     companion object {
         var apiService: NewsApiService? = null

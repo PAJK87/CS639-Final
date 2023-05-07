@@ -3,10 +3,12 @@ package com.example.finminds
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -52,15 +54,18 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.finminds.ui.theme.FinMindsTheme
 
 class NewsActivity : ComponentActivity() {
 
     private val newsView by viewModels<NewsView>()
+    private val TAG: String = NewsActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        newsView.getNewsList()
         setContent{
             Surface() {
                 Column(
@@ -68,14 +73,12 @@ class NewsActivity : ComponentActivity() {
 
                 ) {
                     NewsAppBar()
-                    var bloombergList = newsView.bloombergNewsResponse
-                    var wsjList = newsView.wsjNewsResponse
-                    newsList(articleList = wsjList)
-                    newsView.getWsjList()
-                    newsView.getBloombergList()
+                    val newsList = newsView.newsResponse
+                    newsList(newsList)
                 }
             }
         }
+
     }
 }
 
@@ -100,7 +103,7 @@ fun NewsScreenPreview() {
                 content = "Hjshfljkhasldfjhlaksdjfla"
             ))
             NewsAppBar()
-            newsList(articleList = listOfArticles )
+            newsList(listOfArticles)
         }
 
     }
@@ -110,8 +113,6 @@ fun NewsScreenPreview() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NewsAppBar(){
-    var shouldShowHomeScreen by rememberSaveable { mutableStateOf(true) }
-    val context = LocalContext.current
 
     CenterAlignedTopAppBar(
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF4953BB)),
@@ -125,74 +126,31 @@ fun NewsAppBar(){
         },
 
         navigationIcon = {
-            IconButton(
-                onClick = {
 
-                    val intent = Intent(context, MainActivity::class.java)
-                    context.startActivity(intent)
-                }
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = "Localized description",
-                    tint = Color.White
-                )
-            }
         },
         actions = {
-            SourcesDropDownMenu()
         }
     )
 
 }
 
-@Composable
-fun SourcesDropDownMenu() {
-    val context = LocalContext.current
-    var expanded by remember { mutableStateOf(false) }
-
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-//        modifier = Modifier
-//            .wrapContentSize(Alignment.TopEnd)
-    ) {
-        Text(
-            text = "Sources",
-            color = Color.White,
-            fontSize = 10.sp,
-            textAlign = TextAlign.Center,
-        )
-        IconButton(onClick = { expanded = !expanded }) {
-            Icon(
-                imageVector = Icons.Default.MoreVert,
-                contentDescription = "More",
-                tint = Color.White,
-                modifier = Modifier.offset(x = (-10).dp)
-            )
-        }
-        DropdownMenu(
-            expanded = expanded,
-            onDismissRequest = { expanded = false }
-        ) {
-            DropdownMenuItem(
-                text = { Text("Wall Street Journal") },
-                onClick = { Toast.makeText(context, "Load", Toast.LENGTH_SHORT).show() }
-            )
-            DropdownMenuItem(
-                text = { Text("Bloomberg News") },
-                onClick = { }
-            )
-        }
-    }
-}
 
 
-
+//@Composable
+//fun newsList() {
+//    val newsViewModel: NewsView = viewModel()
+//    val newsList = newsViewModel.newsResponse
+//    LazyColumn {
+//        itemsIndexed(items = newsList) { index, item ->
+//            newsItem(article = item)
+//        }
+//    }
+//}
 
 @Composable
-fun newsList(articleList: Array<NewsData.Articles>) {
+fun newsList(newsList: Array<NewsData.Articles>) {
     LazyColumn {
-        itemsIndexed(items = articleList) { index, item ->
+        itemsIndexed(items = newsList) { index, item ->
             newsItem(article = item)
         }
     }
@@ -224,8 +182,6 @@ fun newsItem(article: NewsData.Articles) {
                         .fillMaxHeight()
                         .weight(0.2f)
                 )
-
-
                 Column(
                     verticalArrangement = Arrangement.Center,
                     modifier = Modifier
@@ -238,15 +194,15 @@ fun newsItem(article: NewsData.Articles) {
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
-//                    Text(
-//                        text = article.source.name,
-//                        style = MaterialTheme.typography.bodySmall,
-//                        modifier = Modifier
-//                            .background(
-//                                Color.LightGray
-//                            )
-//                            .padding(4.dp)
-//                    )
+                    Text(
+                        text = article.source.name,
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier
+                            .background(
+                                Color.LightGray
+                            )
+                            .padding(4.dp)
+                    )
                     Text(
                         text = article.description,
                         style = MaterialTheme.typography.bodySmall,
@@ -258,8 +214,4 @@ fun newsItem(article: NewsData.Articles) {
             }
         }
     }
-}
-
-fun generateNewsList(source : String){
-
 }
