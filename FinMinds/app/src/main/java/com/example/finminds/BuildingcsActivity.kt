@@ -204,24 +204,24 @@ data class BcsQuizQuestion(
     val answer: Int
 )
 val BcsquizQuestions = listOf(
-    QuizQuestion(
+    BcsQuizQuestion(
         question = "What is a credit score?",
         options = listOf("A numerical representation of a person's creditworthiness", "The amount of money a person owes on their credit cards", "The number of credit cards a person has", "The amount of money a person earns each year"),
         answer = 0
     ),
-    QuizQuestion(
+    BcsQuizQuestion(
         question = "What factors affect a person's credit score?",
         options = listOf("Payment history, credit utilization, length of credit history, types of credit used, and new credit inquiries", "Income, age, gender, and education level", "Marital status, number of children, and occupation", "Political affiliation, religion, and ethnicity"),
         answer = 0
     ),
-    QuizQuestion(
+    BcsQuizQuestion(
         question = "What is a good credit score?",
         options = listOf("Generally, a score of 670 or higher is considered good", "Generally, a score of 500 or higher is considered good", "Generally, a score of 800 or higher is considered good", "There is no such thing as a good credit score"),
         answer = 0
     )
 )
 @Composable
-fun BcsQuizQuestionCard(question: QuizQuestion, onAnswerSelected: (Boolean) -> Unit) {
+fun BcsQuizQuestionCard(question: BcsQuizQuestion, onAnswerSelected: (Boolean) -> Unit) {
     var selectedOption by remember { mutableStateOf<Int?>(null) }
     Card(
         modifier = Modifier
@@ -300,7 +300,7 @@ fun BuildingcsQuiz() {
 
         }
         if (currentQuestionIndex < BcsquizQuestions.size) {
-            QuizQuestionCard(
+            BcsQuizQuestionCard(
                 question = BcsquizQuestions[currentQuestionIndex]
             ) { isCorrect ->
                 if (isCorrect) {

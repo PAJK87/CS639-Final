@@ -300,7 +300,7 @@ fun BudgetQuiz() {
 
         }
         if (currentQuestionIndex < BquizQuestions.size) {
-            QuizQuestionCard(
+            BQuizQuestionCard(
                 question = BquizQuestions[currentQuestionIndex]
             ) { isCorrect ->
                 if (isCorrect) {

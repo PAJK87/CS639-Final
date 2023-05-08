@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -86,7 +87,7 @@ fun TaxButton(){
         modifier = Modifier
             .height(70.dp)
             .width(250.dp)
-            .padding(10.dp)
+            .padding(5.dp)
     ) {
         Text(text = "Tax")
     }
@@ -102,7 +103,7 @@ fun BudgetingButton(){
         modifier = Modifier
             .height(70.dp)
             .width(250.dp)
-            .padding(10.dp)
+            .padding(5.dp)
     ) {
         Text(text = "Budgeting")
     }
@@ -118,7 +119,7 @@ fun BuildingCSButton(){
         modifier = Modifier
             .height(70.dp)
             .width(250.dp)
-            .padding(10.dp)
+            .padding(5.dp)
     ) {
         Text(text = "Building Credit Score")
     }
@@ -134,7 +135,7 @@ fun ManagingDebt(){
         modifier = Modifier
             .height(70.dp)
             .width(250.dp)
-            .padding(10.dp)
+            .padding(5.dp)
     ) {
         Text(text = "Managing Debt")
     }
@@ -149,10 +150,12 @@ fun InvAndRetPlanning(){
         },
         modifier = Modifier
             .height(70.dp)
-            .width(250.dp)
-            .padding(10.dp)
+            .width(260.dp)
+            .padding(5.dp)
     ) {
-        Text(text = "Investing and Retirement Planning")
+        Text(text = "Investing and Retirement Planning",
+            textAlign = TextAlign.Center
+            )
     }
 }
 
