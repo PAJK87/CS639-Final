@@ -9,9 +9,6 @@ The app is a **`financial literacy`** app designed for Android devices. It provi
 # Design
 <img width="1485" alt="Screenshot 2023-04-22 at 9 09 34 PM" src="https://user-images.githubusercontent.com/64671049/233814011-246d8a86-84ed-40a4-9416-a75052343daa.png">
 
-# Sprint 1
-# Sprint 2
-# Sprint 3
 # final Prototype
 
 
