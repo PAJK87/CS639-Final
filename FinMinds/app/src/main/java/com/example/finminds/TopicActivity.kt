@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -19,10 +21,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.finminds.ui.theme.FinMindsTheme
 
 class TopicActivity : ComponentActivity() {
@@ -55,6 +59,8 @@ fun TopicAppBar(){
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = Color.White,
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp
             )
         }
     )
@@ -65,7 +71,9 @@ fun TopicAppBar(){
 @Composable
 fun TopicBox(){
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxSize(),
     ) {
         TaxButton()
         BudgetingButton()
@@ -89,7 +97,11 @@ fun TaxButton(){
             .width(250.dp)
             .padding(5.dp)
     ) {
-        Text(text = "Tax")
+        Text(
+            text = "Tax",
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp
+        )
     }
 }
 @Composable
@@ -105,7 +117,11 @@ fun BudgetingButton(){
             .width(250.dp)
             .padding(5.dp)
     ) {
-        Text(text = "Budgeting")
+        Text(
+            text = "Budgeting",
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp
+        )
     }
 }
 @Composable
@@ -121,7 +137,12 @@ fun BuildingCSButton(){
             .width(250.dp)
             .padding(5.dp)
     ) {
-        Text(text = "Building Credit Score")
+        Text(
+            text = "Building Credit Score",
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp,
+            textAlign = TextAlign.Center
+        )
     }
 }
 @Composable
@@ -137,7 +158,11 @@ fun ManagingDebt(){
             .width(250.dp)
             .padding(5.dp)
     ) {
-        Text(text = "Managing Debt")
+        Text(
+            text = "Managing Debt",
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp
+        )
     }
 }
 @Composable
@@ -149,12 +174,15 @@ fun InvAndRetPlanning(){
             context.startActivity(intent)
         },
         modifier = Modifier
-            .height(70.dp)
+//            .height(70.dp)
             .width(260.dp)
             .padding(5.dp)
     ) {
-        Text(text = "Investing and Retirement Planning",
-            textAlign = TextAlign.Center
+        Text(
+            text = "Investing and Retirement Planning",
+            textAlign = TextAlign.Center,
+            fontWeight = FontWeight.Bold,
+            fontSize = 20.sp
             )
     }
 }
@@ -167,8 +195,8 @@ fun TopicPreview() {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            MyAppBar()
-            ButtonBox()
+            TopicAppBar()
+            TopicBox()
         }
     }
 }

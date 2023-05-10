@@ -7,11 +7,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
@@ -29,7 +27,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -62,7 +59,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MyAppBar(){
@@ -74,6 +70,8 @@ fun MyAppBar(){
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = Color.White,
+                fontWeight = FontWeight.Bold,
+                fontSize = 25.sp
             )
         },
     )
@@ -92,7 +90,6 @@ private fun MyApp(modifier: Modifier = Modifier) {
     }
 }
 
-
 @Composable
 fun HomeScreen(){
     Surface(
@@ -107,10 +104,7 @@ fun HomeScreen(){
     }
 }
 @Composable
-fun WelcomeScreen(
-    onContinueClicked: () -> Unit,
-    modifier: Modifier = Modifier
-) {
+fun WelcomeScreen(onContinueClicked: () -> Unit, modifier: Modifier = Modifier) {
     Surface(color = colorResource(id = R.color.Main)) {
         
 
@@ -148,10 +142,6 @@ fun WelcomeScreen(
     }
 }
 
-
-
-
-
 @Composable
 fun ButtonBox(){
     Column(
@@ -164,7 +154,6 @@ fun ButtonBox(){
         NewsButton()
     }
 }
-
 
 @Composable
 fun TopicButton(){
@@ -185,10 +174,15 @@ fun TopicButton(){
         )
     }
 }
+
 @Composable
 fun QuizButton(){
+    val context = LocalContext.current
     Button(
-        onClick = { /*TODO*/ },
+        onClick = {
+            val intent = Intent(context, RandomQuizActivity::class.java)
+            context.startActivity(intent)
+                  },
         modifier = Modifier
 //            .height(40.dp)
             .width(250.dp)

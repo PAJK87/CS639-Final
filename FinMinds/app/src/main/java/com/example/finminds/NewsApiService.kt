@@ -1,11 +1,10 @@
 package com.example.finminds
 
-import retrofit2.http.GET
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
 
 const val BASE_URL = "https://newsapi.org/v2/"
-//const val API_KEY = "eb28e9e5a11e47c39191ba2b13309091"
 const val API_KEY = "fed5b3657d734724a8c3fa420653f725"
 
 interface NewsApiService {

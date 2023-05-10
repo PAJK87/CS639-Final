@@ -49,6 +49,11 @@
             android:label="@string/title_newsactivity"
             android:theme="@style/Theme.FinMinds" />
         <activity
+            android:name=".RandomQuizActivity"
+            android:exported="false"
+            android:label="RandomQuiz"
+            android:theme="@style/Theme.FinMinds" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.FinMinds">

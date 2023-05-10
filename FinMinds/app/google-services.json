@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "937001761004",
+    "firebase_url": "https://quiz-database-63f2f-default-rtdb.firebaseio.com",
+    "project_id": "quiz-database-63f2f",
+    "storage_bucket": "quiz-database-63f2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:937001761004:android:7e3e532eb2830ad7d34dc9",
+        "android_client_info": {
+          "package_name": "com.example.finminds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "937001761004-afu7juuq7bivicbfckmo8p46ej6biiss.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmKGb-B_TD763YlcjWNdxEf0cniJ1GxTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "937001761004-afu7juuq7bivicbfckmo8p46ej6biiss.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
