@@ -39,7 +39,6 @@ import com.example.finminds.ui.theme.FinMindsTheme
 class NewsActivity : ComponentActivity() {
 
     private val newsView by viewModels<NewsView>()
-    private val TAG: String = NewsActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +51,7 @@ class NewsActivity : ComponentActivity() {
                 ) {
                     NewsAppBar()
                     val newsList = newsView.newsResponse
-                    newsList(newsList)
+                    NewsList(newsList)
                 }
             }
         }
@@ -82,7 +81,7 @@ fun NewsScreenPreview() {
             ))
 
             NewsAppBar()
-            newsList(listOfArticles)
+            NewsList(listOfArticles)
         }
 
     }
@@ -90,7 +89,7 @@ fun NewsScreenPreview() {
 
 fun isoTOString(string:String): String{
     val newDate : String
-    val month:String = string.substring(5,7)
+    val month = string.substring(5,7)
     val date = string.substring(8,10)
     val year = string.substring(0,4)
     newDate = "$month/$date/$year"
@@ -114,32 +113,24 @@ fun NewsAppBar(){
                 fontSize = 25.sp
             )
         },
-
-        navigationIcon = {
-
-        },
-        actions = {
-        }
     )
-
 }
 
 
 @Composable
-fun newsList(newsList: Array<NewsData.Articles>) {
+fun NewsList(newsList: Array<NewsData.Articles>) {
     LazyColumn {
         itemsIndexed(items = newsList) { index, item ->
-            newsItem(article = item)
+            NewsItem(item)
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun newsItem(article: NewsData.Articles) {
+fun NewsItem(article: NewsData.Articles) {
     val uriHandler = LocalUriHandler.current
-    val image = if (article.urlToImage == null) null else article.urlToImage
-    val author = if(article.author == null) "None" else article.author
+    val image = if(article.urlToImage == null) "null" else article.urlToImage
     Card(
         modifier = Modifier
             .padding(8.dp, 4.dp)
