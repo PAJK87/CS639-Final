@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -83,7 +84,7 @@ fun TaxAppBar() {
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF4953BB)),
         title = {
             Text(
-                "Taxes",
+                stringResource(R.string.taxesappbar),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = Color.White,
@@ -265,7 +266,7 @@ fun QuizQuestionCard(question: QuizQuestion, onAnswerSelected: (Boolean) -> Unit
                 enabled = selectedOption != null,
                 modifier = Modifier.align(Alignment.End)
             ) {
-                Text(text = "Submit")
+                Text(text = stringResource(R.string.submit))
             }
         }
     }
@@ -283,7 +284,7 @@ fun TaxQuiz() {
             modifier = Modifier.padding(bottom = 8.dp)
         ) {
             Text(
-                text = "Test Your Knowledge",
+                text = stringResource(R.string.inTopicQuizTitle),
                 style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(start = 8.dp)
             )
@@ -317,7 +318,7 @@ fun TaxQuiz() {
                     modifier = Modifier.padding(16.dp)
                 ) {
                     Text(
-                        text = "Quiz complete!",
+                        text = stringResource(R.string.quizcomplete),
                         style = MaterialTheme.typography.headlineLarge,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
