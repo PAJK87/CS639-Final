@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -55,7 +56,7 @@ fun TopicAppBar(){
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF4953BB)),
         title = {
             Text(
-                "Topics",
+                stringResource(R.string.topicsappbar),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = Color.White,
@@ -98,7 +99,7 @@ fun TaxButton(){
             .padding(5.dp)
     ) {
         Text(
-            text = "Tax",
+            text = stringResource(R.string.tax),
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp
         )
@@ -118,7 +119,7 @@ fun BudgetingButton(){
             .padding(5.dp)
     ) {
         Text(
-            text = "Budgeting",
+            text = stringResource(R.string.budgetingbutton),
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp
         )
@@ -138,7 +139,7 @@ fun BuildingCSButton(){
             .padding(5.dp)
     ) {
         Text(
-            text = "Building Credit Score",
+            text = stringResource(R.string.buildingcsbutton),
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp,
             textAlign = TextAlign.Center
@@ -159,7 +160,7 @@ fun ManagingDebt(){
             .padding(5.dp)
     ) {
         Text(
-            text = "Managing Debt",
+            text = stringResource(R.string.managingdebtbutton),
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp
         )
@@ -179,7 +180,7 @@ fun InvAndRetPlanning(){
             .padding(5.dp)
     ) {
         Text(
-            text = "Investing and Retirement Planning",
+            text = stringResource(R.string.investingretirebutton),
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
             fontSize = 20.sp

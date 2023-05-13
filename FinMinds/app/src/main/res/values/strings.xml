@@ -10,4 +10,19 @@
     <string name="title_activity_manage_debt">ManageDebtActivity</string>
     <string name="title_activity_inv_ret_plan">InvRetPlanActivity</string>
     <string name="title_newsactivity">NewsActivity</string>
+    <string name="tax">Tax</string>
+    <string name="buildingcsbutton">Building Credit Score</string>
+    <string name="managingdebtbutton">Managing Debt</string>
+    <string name="investingretirebutton">Investing and Retirement Planning</string>
+    <string name="budgetingbutton">Budgeting</string>
+    <string name="topicsappbar">Topics</string>
+    <string name="inTopicQuizTitle">Test Your Knowledge</string>
+    <string name="quizcomplete">Quiz complete!</string>
+    <string name="submit">Submit</string>
+    <string name="youtubeCardClickable">Click here to watch a video!</string>
+    <string name="managingdebtappbar">Managing Debt</string>
+    <string name="taxesappbar">Taxes</string>
+    <string name="budgetingAppbar">Budgeting</string>
+    <string name="BuildingcsAppbar">Building Credit Score</string>
+    <string name="investment_and_retirement_planningAppbar">Investment and Retirement planning</string>
 </resources>

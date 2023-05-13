@@ -36,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -85,7 +86,7 @@ fun ManagingDebtAppBar() {
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(containerColor = Color(0xFF4953BB)),
         title = {
             Text(
-                "Managing Debt",
+                stringResource(R.string.managingdebtappbar),
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
                 color = Color.White,
@@ -173,7 +174,7 @@ fun MdYoutubeCard() {
                 .clip(RoundedCornerShape(8.dp))
         ) {
             Text(
-                text = "Click here to watch a video!",
+                text = stringResource(R.string.youtubeCardClickable),
                 style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold),
                 color = Color.Black,
                 maxLines = 1,
@@ -267,7 +268,7 @@ fun mdQuizQuestionCard(question: mdQuizQuestion, onAnswerSelected: (Boolean) -> 
                 enabled = selectedOption != null,
                 modifier = Modifier.align(Alignment.End)
             ) {
-                Text(text = "Submit")
+                Text(text = stringResource(R.string.submit))
             }
         }
     }
@@ -285,7 +286,7 @@ fun ManagingDebtQuiz() {
             modifier = Modifier.padding(bottom = 8.dp)
         ) {
             Text(
-                text = "Test Your Knowledge",
+                text = stringResource(R.string.inTopicQuizTitle),
                 style = MaterialTheme.typography.headlineMedium,
                 modifier = Modifier.padding(start = 8.dp)
             )
@@ -319,7 +320,7 @@ fun ManagingDebtQuiz() {
                     modifier = Modifier.padding(16.dp)
                 ) {
                     Text(
-                        text = "Quiz complete!",
+                        text = stringResource(R.string.quizcomplete),
                         style = MaterialTheme.typography.headlineLarge,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
