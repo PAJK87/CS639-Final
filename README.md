@@ -15,6 +15,11 @@ The app is a **`financial literacy`** app designed for Android devices. It provi
 <img src="https://github.com/PAJK87/CS639-Final/assets/64671049/9bb7fd22-0809-461a-bfb8-92095eed82a0" width="25%" height="25%">
 <img src="https://github.com/PAJK87/CS639-Final/assets/64671049/3289dd87-754b-4f3c-9467-3a4a05a028a8" width="25%" height="25%">
 
+# Final Presentation
+[Presentation](https://pitch.com/public/0b1de5b5-60fd-4773-990a-d2d831f25a68)\
+[Video Presentation](https://www.youtube.com/watch?v=pzCBhrimOGE&t=552s)
+
+
 
 # Final Prototype
 For the final prototype we stuck closely to the intial wireframe design we made. We did make a change to the logo, while the graduation cap did bring in the education aspect we were worried it skewed towards a younger crowd and the logo without it was more mature. The biggest changes we made were to the topic quiz component and the news section. For the topics, instead of having a seperate screen for the topic quiz, we decided to integrate it into the topic page itself. This design makes it easier for the user. The news section was simplfied just due to time frame. We made it a single list of news articles instead of having different sections and featured stories. In further iterations of the app, we would fine tune the news sections to add different sources and a search function. 
