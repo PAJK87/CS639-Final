@@ -4,8 +4,6 @@
 
 The app is a **`financial literacy`** app designed for Android devices. It provides users with resources and tools to improve their financial knowledge and decision-making. The app features three main sections: a quiz, a news section, and an education section. The quiz tests the user's financial knowledge, while the news section provides up-to-date information on the financial world. The education section provides educational resources on various financial topics. Overall, the app is designed to provide a comprehensive resource for improving financial literacy and decision-making.
 
-# Idea and Proposal
-[Idea Proposal & Research](https://docs.google.com/document/d/1yi7Hwpy7o48bMEGhqWHTFnHy8iyZ0ZBt/edit)
 # Design
 <img width="1485" alt="Screenshot 2023-04-22 at 9 09 34 PM" src="https://user-images.githubusercontent.com/64671049/233814011-246d8a86-84ed-40a4-9416-a75052343daa.png">
 
@@ -16,7 +14,7 @@ The app is a **`financial literacy`** app designed for Android devices. It provi
 <img src="https://github.com/PAJK87/CS639-Final/assets/64671049/3289dd87-754b-4f3c-9467-3a4a05a028a8" width="25%" height="25%">
 
 # Final Presentation
-[Presentation](https://pitch.com/public/0b1de5b5-60fd-4773-990a-d2d831f25a68)\
+[Presentation](https://github.com/PAJK87/FinMinds/blob/main/FinMinds%20Final%20Presentation.pdf)\
 [Video Presentation](https://www.youtube.com/watch?v=pzCBhrimOGE&t=552s)
 
 
