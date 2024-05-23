@@ -1,4 +1,4 @@
-# CS639 Final Project - 'FinMinds' (Team 8)
+# CS639 Final Project - 'FinMinds'
 
 # Project Overview
 
